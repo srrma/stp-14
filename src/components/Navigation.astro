@@ -1,0 +1,118 @@
+<header class="main-header">
+    <div class="header-content">
+      <a href="/" class="logo">Stephan Hofburg</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <style>
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 1.25rem 0;
+    z-index: 100;
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-nav li {
+    margin-left: 1.25rem;
+  }
+  
+  .main-nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 0.625rem 0.9375rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .main-nav a:hover {
+    color: #5b58f4;
+  }
+  
+  .main-header.sticky {
+    width: auto;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .main-header.sticky .header-content {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .main-header.sticky {
+      width: 100%;
+      padding: 1.25rem 0;
+      border-radius: 0;
+      box-shadow: none;
+      background-color: #f8f8f8;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+  
+    .main-header.sticky .header-content {
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+  }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.querySelector('.main-header');
+      const stickyThreshold = 50; // Pixel offset to trigger sticky class
+      const largeScreenWidth = 768; // Breakpoint for sticky behavior
+  
+      window.addEventListener('scroll', () => {
+        const isLargeScreen = window.innerWidth > largeScreenWidth;
+        const scrolledPastThreshold = window.scrollY > stickyThreshold;
+  
+        if (isLargeScreen && scrolledPastThreshold) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
+      });
+    });
+  </script>

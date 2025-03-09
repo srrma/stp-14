@@ -1,0 +1,17 @@
+---
+// src/pages/portfolio.astro
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import AllProjects from '../components/AllProjects.astro';
+
+const pageTitle = "Portfolio - Stephan Hofburg | Graphic Designer";
+const pageDescription = "Explore the comprehensive graphic design portfolio of Stephan Hofburg, showcasing branding, logo, and visual identity projects.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation currentPage="portfolio" />
+
+  <main>
+    <AllProjects />
+  </main>
+</Layout>
