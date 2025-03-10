@@ -1,5 +1,4 @@
 ---
-// src/components/FeaturedWorks.astro
 import { projectsData } from '../data/ProjectsData';
 
 const featuredProjects = projectsData.filter(project => project.isFeatured);
@@ -12,19 +11,22 @@ const featuredProjects = projectsData.filter(project => project.isFeatured);
       {featuredProjects.map((project) => (
         <article
           class="featured-work-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-purple-200" >
-          <a href={`/${project.slug}`}>
-          <img
-            src={project.imageSrc}
-            alt={project.imageAlt}
-            loading="lazy"
-            class="w-full h-auto sm:h-96 object-cover block rounded-t-lg"
-          />
-        </a>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
-            <a href={`/${project.slug}`} class="inline-block mt-3 text-burple-100 hover:text-burple-200 hover:underline font-semibold transition-colors duration-200"
-              >View Project <span class="arrow-icon">→</span></a
-            >
+          <div class="project-image-container relative"> {/* New container for image and overlay */}
+            <a href={`/${project.slug}`}>
+              <img
+                src={project.imageSrc}
+                alt={project.imageAlt}
+                loading="lazy"
+                class="w-full h-auto sm:h-96 object-cover block rounded-t-lg"
+              />
+            </a>
+            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg"></div> {/* Gradient overlay */}
+            <div class="project-text absolute bottom-0 left-0 p-6 text-white"> {/* Text container, positioned at bottom */}
+              <h3 class="text-3xl font-semibold mb-2">{project.title}</h3>
+              <a href={`/${project.slug}`} class="inline-block mt-3 hover:text-burple-200 hover:underline font-semibold transition-colors duration-200 text-white"
+                >View Project <span class="arrow-icon">→</span></a
+              >
+            </div>
           </div>
         </article>
       ))}
@@ -92,5 +94,21 @@ const featuredProjects = projectsData.filter(project => project.isFeatured);
 
   .featured-work-item a:hover .arrow-icon {
     transform: translateX(4px); /* Animate arrow on link hover */
+  }
+
+  .project-image-container {
+   position: relative; /* To contain absolute positioned elements */
+  }
+
+  .project-overlay {
+   pointer-events: none; /* Make sure the overlay doesn't block clicks */
+  }
+
+  .project-text {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 1.5rem; /* Equivalent to p-6 */
+   color: white; /* Ensure text is white for visibility on gradient */
   }
 </style>
