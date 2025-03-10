@@ -21,7 +21,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const pageTitle = `${project.title} - Stephan Hofburg | Graphic Designer`;
+const pageTitle = `${project.title} - Usrarama | Graphic Designer`;
 const pageDescription = project.description; // Or a more detailed project description if you have one
 ---
 
@@ -48,6 +48,21 @@ const pageDescription = project.description; // Or a more detailed project descr
             </ul>
           </div>
           <p class="text-gray-700 text-lg mb-6">{project.description}</p> {/* Added mb-6 for spacing */}
+          <img
+          src={project.imageBanner2}
+          class="w-full h-auto block rounded-t-lg"
+          loading="lazy"
+          />
+          <img
+          src={project.imageBanner3}
+          class="w-full h-auto block rounded-t-lg"
+          loading="lazy"
+          />
+          <img
+          src={project.imageBanner4}
+          class="w-full h-auto block rounded-t-lg"
+          loading="lazy"
+          />
 
           {/* You can add more project details here: full description, case study, etc. */}
         </div>

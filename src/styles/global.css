@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-    --color-burple-100: #5b58f4;
-    --color-burple-200: #4a48c7;
-    --color-burqoise: #16A896;
-  }
+  --color-burple-100: #5b58f4;
+  --color-burple-200: #4a48c7;
+  --color-burqoise: #16a896;
+}
+
+@font-face {
+  font-family: "Whyte Inktrap Super";
+  src: url("/typeface/WhyteInktrap-Super.woff2") format("woff2"),
+    url("/typeface/WhyteInktrap-Super.woff") format("woff"),
+    url("/typeface/WhyteInktrap-Super.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
