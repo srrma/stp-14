@@ -1,0 +1,80 @@
+---
+// src/pages/projects/[...slug].astro
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// This function tells Astro which pages to build.
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+// Get the specific project for this page from the props
+type Props = {
+  project: CollectionEntry<'projects'>;
+};
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+<Layout title={`${project.data.title} | usrarama`}>
+  <article class="container mx-auto px-4 py-16">
+    <!-- Header Section -->
+    <header class="grid md:grid-cols-2 gap-8 items-center mb-12">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900">{project.data.title}</h1>
+        <div class="flex flex-wrap gap-2 mt-4">
+          {project.data.tags.map(tag => (
+            <span class="bg-gray-200 text-gray-700 px-3 py-1 text-sm font-semibold rounded-full">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <p class="text-gray-600 text-lg">{project.data.shortDescription}</p>
+    </header>
+
+    {project.data.heroImage && (
+      <img src={project.data.heroImage} alt={`Hero image for ${project.data.title}`} class="w-full h-auto rounded-lg mb-12" />
+    )}
+
+    <!-- Main Content from Markdown -->
+    <div class="prose max-w-none text-gray-800 mb-12">
+      <Content />
+    </div>
+
+    <!-- Conditional PDF Viewer Section (Verified Syntax) -->
+    {project.data.pdfFile && (
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Document</h2>
+        <iframe
+          src={project.data.pdfFile}
+          title={`PDF viewer for ${project.data.title}`}
+          class="w-full h-[800px] border border-gray-200 rounded-lg"
+        >
+          Your browser does not support PDFs. Please download the PDF to view it:
+          <a href={project.data.pdfFile} class="text-blue-600 underline">Download PDF</a>.
+        </iframe>
+      </div>
+    )}
+
+    <!-- CONDITIONAL Display Image -->
+    {project.data.displayImage && (
+      <img src={project.data.displayImage} alt={`Display image for ${project.data.title}`} class="w-full h-auto rounded-lg mb-12" />
+    )}
+
+    <!-- Meta Data Section -->
+    <footer class="grid md:grid-cols-2 gap-x-12 gap-y-8 border-t border-gray-200 pt-8">
+      <div>
+        <h3 class="font-bold text-gray-900 mb-2">Software Used</h3>
+        <p class="text-gray-600">{project.data.softwareUsed}</p>
+      </div>
+      {project.data.imageCredit && (
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">Image Credit</h3>
+          <p class="text-gray-600">{project.data.imageCredit}</p>
+        </div>
+      )}
+    </footer>
+  </article>
+</Layout>

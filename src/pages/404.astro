@@ -1,21 +1,27 @@
 ---
+// src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
 
-const pageTitle = "Usrarama | Graphic Designer";
-const pageDescription = "Usrarama is a graphic designer specializing in branding and logo design. View stunning portfolio of work and contact for freelance projects.";
+// This is where you can define your bio text and skills
+const bio = "This page seems to have wandered off. Why don't you head back to the homepage and start fresh?";
+
+const skills = [
+  'Branding & Identity',
+  'Poster Design',
+  'Logo Design',
+  'UI/UX',
+  'Figma',
+  'Adobe Illustrator',
+  'Adobe Photoshop',
+];
 ---
+<Layout title="404 | usrarama">
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">404</h1>
 
-<Layout title={pageTitle} description={pageDescription}>
-    <Navigation />
-    <main class="bg-gray-50 py-20">
-        <div class="container mx-auto px-8">
-          <section id="about-content" class="bg-white rounded-lg shadow-md p-8">
-            <h1 class="text-4xl font-bold font-['Whyte_Inktrap_Super'] text-left text-burple-100 pt-12 mb-4">Oh snap!</h1>
-            <p class="tfont-normal text-left mb-2">
-                This page seems to have wandered off. Why don't you head back to the home page?</p>
-            {/* You can add more sections, images, etc. here as needed */}
-          </section>
-        </div>
-      </main>
+    <div class="prose max-w-none text-gray-800 mt-8">
+      <p>{bio}</p>
+    </div>
+
+  </div>
 </Layout>

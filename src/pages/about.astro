@@ -1,24 +1,39 @@
 ---
+// src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
 
-const pageTitle = "About | Usrarama";
-const pageDescription = "Learn more about Usrarama, a graphic designer specializing in branding and logo design. Discover the story, skills, and passion behind the portfolio.";
+// This is where you can define your bio text and skills
+const bio = "I'm a graphic designer who loves turning photos and anime images into eye-catching posters and designs. My passion lies in creating unique brand identities with logos and visuals that tell a compelling story in a memorable way. I believe that good design is not just about aesthetics, but about clear communication and creating a lasting impact.";
+
+const skills = [
+  'Branding & Identity',
+  'Poster Design',
+  'Logo Design',
+  'UI/UX',
+  'Figma',
+  'Adobe Illustrator',
+  'Adobe Photoshop',
+];
 ---
+<Layout title="About Me | usrarama">
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">About Me</h1>
 
-<Layout title={pageTitle} description={pageDescription}>
-  <Navigation currentPage="about" /> {/* Setting currentPage to "about" */}
-
-  <main class="bg-gray-50 py-20">
-    <div class="container mx-auto px-8">
-      <section id="about-content" class="bg-white rounded-lg shadow-md p-8">
-        <h1 class="text-3xl font-bold mb-6">About Me</h1>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          I had the idea to create this site because I was wondering where I could share my projects with the world, and creating a website was one of the ideas that came to my mind. As I'm not a professional programmer, the site may look a little barebones, but I've done something to make it a little interactive. Don't worry; I'll definitely crack the code to web development and try to make this site as great as possible! Here you can see my different works and projects that I've done or taken part in. Feel free to surf around!
-        </p>
-        {/* You can add more sections, images, etc. here as needed */}
-      </section>
+    <div class="prose max-w-none text-gray-800 mt-8">
+      <p>{bio}</p>
     </div>
-  </main>
 
+    <!-- Enhanced Skills Section -->
+    <div class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Skills</h2>
+      <div class="flex flex-wrap gap-3">
+        {skills.map(skill => (
+          <span class="bg-gray-200 text-gray-700 px-4 py-2 text-sm font-semibold rounded-full">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+  </div>
 </Layout>
