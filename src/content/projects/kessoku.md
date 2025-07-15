@@ -4,7 +4,7 @@ shortDescription: 'A character-focused piece designed for kessoku band.'
 tags: ['Ticket Design']
 heroImage: '/images/kessoku/hero.webp'
 thumbnailImage: '/images/kessoku/thumb.webp'
-isFeatured: true
+isFeatured: false
 softwareUsed: 'Adobe Photoshop'
 imageCredit: 'Original character design by Aki Hamazi.'
 date: 2023-10-26

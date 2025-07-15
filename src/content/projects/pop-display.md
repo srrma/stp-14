@@ -5,7 +5,7 @@ tags: ['Poster Design', 'GFX']
 heroImage: '/images/pop-display/hero.webp'
 displayImage: '/images/pop-display/hero-2.webp'
 thumbnailImage: '/images/pop-display/thumb.webp'
-isFeatured: true
+isFeatured: false
 softwareUsed: 'Adobe Photoshop'
 imageCredit: 'Original character design by Masaoki Shindou, Miyu Morishita, Eku Takeshima, Aki Hamazi, and Teshimanari.'
 date: 2024-12-28
