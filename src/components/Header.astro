@@ -47,24 +47,29 @@ import { Icon } from 'astro-icon/components';
 </header>
 
 <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const openIcon = document.getElementById('menu-open-icon');
-    const closeIcon = document.getElementById('menu-close-icon');
+    // This function contains all the logic to initialize the mobile menu
+    const initMobileMenu = () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
 
-    // Ensures the menu is reset to its closed state on page navigation
-    document.addEventListener('astro:after-swap', () => {
-        mobileMenu.classList.add('hidden');
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-    });
+        // If the elements don't exist on the page, do nothing.
+        if (!menuBtn || !mobileMenu || !openIcon || !closeIcon) {
+            return;
+        }
 
-    // Toggles the mobile menu and locks/unlocks page scrolling
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        openIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
-    });
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        });
+    };
+
+    // Run the initialization function on the initial page load
+    initMobileMenu();
+
+    // Run the initialization function again after every page transition
+    document.addEventListener('astro:page-load', initMobileMenu);
 </script>
