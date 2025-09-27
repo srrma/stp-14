@@ -2,9 +2,9 @@
 title: 'Resplendent'
 shortDescription: 'Resplendence of colors, like the Witch was.'
 tags: ['Poster Design']
-heroImage: '/images/resplendent/hero.webp'
-displayImage: '/images/resplendent/hero-2.webp'
-thumbnailImage: '/images/resplendent/thumb.webp'
+heroImage: '../../assets/images/resplendent/hero.webp'
+displayImage: '../../assets/images/resplendent/hero-2.webp'
+thumbnailImage: '../../assets/images/resplendent/thumb.webp'
 isFeatured: true
 softwareUsed: 'Adobe Illustrator'
 date: 2024-12-26

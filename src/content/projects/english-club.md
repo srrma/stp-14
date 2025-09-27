@@ -2,7 +2,7 @@
 title: 'English Club'
 shortDescription: 'Designing brand identity for my school English Club.'
 tags: ['Brand Identity']
-thumbnailImage: '/images/english-club/thumb.webp'
+thumbnailImage: '../../assets/images/english-club/thumb.webp'
 isFeatured: false
 softwareUsed: 'Adobe Photoshop, Adobe Illustrator, Adobe Lightroom, Adobe Premiere Pro'
 date: 2025-06-10

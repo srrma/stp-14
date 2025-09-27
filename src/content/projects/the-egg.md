@@ -2,8 +2,8 @@
 title: 'The Egg'
 shortDescription: 'A short story by Andy Weir.'
 tags: ['Book Cover Design', 'Poster Design']
-heroImage: '/images/the-egg/hero.webp'
-thumbnailImage: '/images/the-egg/thumb.webp'
+heroImage: '../../assets/images/the-egg/hero.webp'
+thumbnailImage: '../../assets/images/the-egg/thumb.webp'
 isFeatured: true
 softwareUsed: 'Adobe Illustrator'
 date: 2025-07-14

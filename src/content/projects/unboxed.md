@@ -2,8 +2,8 @@
 title: 'Unboxed'
 shortDescription: 'Behind-the-scene style character focused artworks.'
 tags: ['Poster Design','GFX']
-heroImage: '/images/unboxed/hero.webp'
-thumbnailImage: '/images/unboxed/thumb.webp'
+heroImage: '../../assets/images/unboxed/hero.webp'
+thumbnailImage: '../../assets/images/unboxed/thumb.webp'
 isFeatured: true
 softwareUsed: 'Adobe Photoshop, Adobe Illustrator'
 imageCredit: 'Original character design by Teshimanari, Kurehito Misaki, and Eku Takeshima.'

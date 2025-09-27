@@ -2,8 +2,8 @@
 title: '2024 Exhibition'
 shortDescription: 'Designed for School Exhibition'
 tags: ['Poster Design']
-heroImage: '/images/2024-exhibition/hero.webp'
-thumbnailImage: '/images/2024-exhibition/thumb.webp'
+heroImage: '../../assets/images/2024-exhibition/hero.webp'
+thumbnailImage: '../../assets/images/2024-exhibition/thumb.webp'
 isFeatured: true
 softwareUsed: 'Adobe Photoshop'
 date: 2024-12-04

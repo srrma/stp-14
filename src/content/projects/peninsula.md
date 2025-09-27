@@ -2,8 +2,8 @@
 title: 'Peninsula'
 shortDescription: 'A Horror Survival Book.'
 tags: ['Book Cover Design', 'Poster Design']
-heroImage: '/images/peninsula/hero.webp'
-thumbnailImage: '/images/peninsula/thumb.webp'
+heroImage: '../../assets/images/peninsula/hero.webp'
+thumbnailImage: '../../assets/images/peninsula/thumb.webp'
 isFeatured: true
 softwareUsed: 'Adobe Illustrator'
 date: 2025-07-14

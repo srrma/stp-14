@@ -2,6 +2,7 @@
 // src/pages/projects/[...slug].astro
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
 // This function tells Astro which pages to build.
 export async function getStaticPaths() {
@@ -35,7 +36,13 @@ const { Content } = await project.render();
     </header>
 
     {project.data.heroImage && (
-      <img src={project.data.heroImage} alt={`Hero image for ${project.data.title}`} class="w-full h-auto rounded-lg mb-12" />
+      <Image
+        src={project.data.heroImage}
+        alt={`Hero image for ${project.data.title}`}
+        width={project.data.heroImage.width}
+        height={project.data.heroImage.height}
+        class="w-full h-auto rounded-lg mb-12"
+      />
     )}
 
     <!-- Main Content from Markdown -->
@@ -58,9 +65,14 @@ const { Content } = await project.render();
       </div>
     )}
 
-    <!-- CONDITIONAL Display Image -->
     {project.data.displayImage && (
-      <img src={project.data.displayImage} alt={`Display image for ${project.data.title}`} class="w-full h-auto rounded-lg mb-12" />
+      <Image
+        src={project.data.displayImage}
+        alt={`Display image for ${project.data.title}`}
+        width={project.data.displayImage.width}
+        height={project.data.displayImage.height}
+        class="w-full h-auto rounded-lg mb-12"
+      />
     )}
 
     <!-- Meta Data Section -->

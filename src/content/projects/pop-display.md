@@ -2,9 +2,9 @@
 title: 'Pop Display'
 shortDescription: 'A dynamic poster design capturing the essence of various anime artstyles.'
 tags: ['Poster Design', 'GFX']
-heroImage: '/images/pop-display/hero.webp'
-displayImage: '/images/pop-display/hero-2.webp'
-thumbnailImage: '/images/pop-display/thumb.webp'
+heroImage: '../../assets/images/pop-display/hero.webp'
+displayImage: '../../assets/images/pop-display/hero-2.webp'
+thumbnailImage: '../../assets/images/pop-display/thumb.webp'
 isFeatured: false
 softwareUsed: 'Adobe Photoshop'
 imageCredit: 'Original character design by Masaoki Shindou, Miyu Morishita, Eku Takeshima, Aki Hamazi, and Teshimanari.'

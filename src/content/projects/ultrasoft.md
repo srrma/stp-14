@@ -2,8 +2,8 @@
 title: 'Ultrasoft'
 shortDescription: 'Collections of Ultra Rare Ships'
 tags: ['UI/UX Design', 'GFX']
-heroImage: '/images/ultrasoft/hero.webp'
-thumbnailImage: '/images/ultrasoft/thumb.webp'
+heroImage: '../../assets/images/ultrasoft/hero.webp'
+thumbnailImage: '../../assets/images/ultrasoft/thumb.webp'
 isFeatured: false
 softwareUsed: 'Figma'
 imageCredit: 'Original character design by kurumi普拉斯, and 侑了个侑.'

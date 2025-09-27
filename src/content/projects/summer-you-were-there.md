@@ -2,8 +2,8 @@
 title: 'The Summer You Were There'
 shortDescription: 'A heartbreaking story by Yuama.'
 tags: ['Book Cover Design', 'Poster Design']
-heroImage: '/images/kimitsuzu/hero.webp'
-thumbnailImage: '/images/kimitsuzu/thumb.webp'
+heroImage: '../../assets/images/kimitsuzu/hero.webp'
+thumbnailImage: '../../assets/images/kimitsuzu/thumb.webp'
 isFeatured: true
 softwareUsed: 'Adobe Illustrator'
 date: 2025-07-14
