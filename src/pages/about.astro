@@ -1,33 +1,21 @@
 ---
 // src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
-
-// This is where you can define your bio text and skills
-const bio = "I'm a graphic designer who loves turning photos and anime images into eye-catching posters and designs. My passion lies in creating unique brand identities with logos and visuals that tell a compelling story in a memorable way. I believe that good design is not just about aesthetics, but about clear communication and creating a lasting impact.";
-
-const skills = [
-  'Branding & Identity',
-  'Poster Design',
-  'Logo Design',
-  'UI/UX',
-  'Figma',
-  'Adobe Illustrator',
-  'Adobe Photoshop',
-];
+import { SITE_DATA } from '../data/site';
 ---
 <Layout title="About Me | usrarama">
   <div class="container mx-auto px-4 py-16">
     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">About Me</h1>
 
     <div class="prose max-w-none text-gray-800 mt-8">
-      <p>{bio}</p>
+      <p>{SITE_DATA.bio}</p>
     </div>
 
     <!-- Enhanced Skills Section -->
     <div class="mt-12">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">Skills</h2>
       <div class="flex flex-wrap gap-3">
-        {skills.map(skill => (
+        {SITE_DATA.skills.map(skill => (
           <span class="bg-gray-200 text-gray-700 px-4 py-2 text-sm font-semibold rounded-full">
             {skill}
           </span>
@@ -35,17 +23,17 @@ const skills = [
       </div>
     </div>
 
-    <div class="mt-12 mb-12">
+    <div class="mt-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">See my CV</h2>
-        <iframe
-          src="/pdfs/CV_landscape.pdf"
-          title="Curriculum Vitae"
-          class="w-full h-[800px] border border-gray-200 rounded-lg"
+        <a
+          href="/pdfs/CV_landscape.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-2 bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-80 transition-colors"
         >
-          Your browser does not support PDFs. Please download the PDF to view it:
-          <a href="/pdfs/CV_landscape.pdf" class="text-blue-600 underline">Download PDF</a>.
-        </iframe>
-      </div>
+          View Curriculum Vitae
+        </a>
+    </div>
 
   </div>
 </Layout>

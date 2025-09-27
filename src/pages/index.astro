@@ -2,6 +2,7 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import ProjectShowcase from '../components/ProjectShowcase.astro';
+import { SITE_DATA } from '../data/site';
 ---
 <Layout title="Home | usrarama">
 	
@@ -9,7 +10,7 @@ import ProjectShowcase from '../components/ProjectShowcase.astro';
 	<ProjectShowcase />
 
 	<!-- 2. The "Hi, I'm usrarama" CTA Section -->
-	<section class="bg-[#5b58f4] text-white py-20 sm:py-32">
+	<section class="bg-accent text-white py-20 sm:py-32">
 		<div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 			
 			<!-- Left Column: The Big Text -->
@@ -20,7 +21,7 @@ import ProjectShowcase from '../components/ProjectShowcase.astro';
 				</h1>
 				<a 
 					href="/projects" 
-					class="inline-block mt-8 bg-white text-[var(--color-primary)] font-bold px-8 py-3 rounded-lg
+					class="inline-block mt-8 bg-white text-accent font-bold px-8 py-3 rounded-lg
 						   hover:bg-gray-200 transition-colors duration-300"
 				>
 					View Portfolio
@@ -30,7 +31,7 @@ import ProjectShowcase from '../components/ProjectShowcase.astro';
 			<!-- Right Column: The Paragraph and Social Links -->
 			<div class="text-center md:text-left">
 				<p class="text-lg sm:text-xl leading-relaxed">
-					I'm a graphic designer who loves turning photos and anime images into eye-catching posters and designs. I also create unique brand identities with logos and visuals that tell your story in a memorable way.
+					{SITE_DATA.shortBio}
 				</p>
 				<div class="flex gap-6 mt-8 justify-center md:justify-start">
 					<!-- Reusing the SVG icons from our Footer tutorial -->
