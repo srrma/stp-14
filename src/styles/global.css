@@ -5,4 +5,6 @@
     --color-dark: oklch(21.01% 0.032 264.66);
 
     --font-primary: 'Poppins', 'sans-serif';
+    --spacing-sm: 0.188rem;
+    --spacing-ex: 50rem;
 }

@@ -47,15 +47,23 @@ import { Icon } from 'astro-icon/components';
 </header>
 
 <script>
-    // This function contains all the logic to initialize the mobile menu
+    /**
+     * Toggles the mobile menu.
+     * This script is designed to run on initial page load and after each
+     * Astro View Transition. A 'data-listener-attached' attribute is used
+     * to prevent attaching multiple click event listeners to the same button.
+     */
     const initMobileMenu = () => {
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const openIcon = document.getElementById('menu-open-icon');
         const closeIcon = document.getElementById('menu-close-icon');
 
-        // If the elements don't exist on the page, do nothing.
         if (!menuBtn || !mobileMenu || !openIcon || !closeIcon) {
+            return;
+        }
+
+        if (menuBtn.dataset.listenerAttached === 'true') {
             return;
         }
 
@@ -65,11 +73,13 @@ import { Icon } from 'astro-icon/components';
             closeIcon.classList.toggle('hidden');
             document.body.classList.toggle('overflow-hidden');
         });
+
+        menuBtn.dataset.listenerAttached = 'true';
     };
 
-    // Run the initialization function on the initial page load
-    initMobileMenu();
+    // Handles the very first load of the page
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
 
-    // Run the initialization function again after every page transition
+    // Handles every subsequent navigation with View Transitions
     document.addEventListener('astro:page-load', initMobileMenu);
 </script>

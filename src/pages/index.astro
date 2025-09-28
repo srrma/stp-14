@@ -6,14 +6,11 @@ import { SITE_DATA } from '../data/site';
 ---
 <Layout title="Home | usrarama">
 	
-	<!-- 1. The Project Showcase Section -->
 	<ProjectShowcase />
 
-	<!-- 2. The "Hi, I'm usrarama" CTA Section -->
 	<section class="bg-accent text-white py-20 sm:py-32">
 		<div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 			
-			<!-- Left Column: The Big Text -->
 			<div class="text-center md:text-left">
 				<h1 class="text-6xl sm:text-7xl font-bold leading-tight">
 					Hi, <br />
@@ -28,15 +25,10 @@ import { SITE_DATA } from '../data/site';
 				</a>
 			</div>
 
-			<!-- Right Column: The Paragraph and Social Links -->
 			<div class="text-center md:text-left">
 				<p class="text-lg sm:text-xl leading-relaxed">
 					{SITE_DATA.shortBio}
 				</p>
-				<div class="flex gap-6 mt-8 justify-center md:justify-start">
-					<!-- Reusing the SVG icons from our Footer tutorial -->
-					
-				</div>
 			</div>
 
 		</div>

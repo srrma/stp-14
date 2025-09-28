@@ -1,26 +1,15 @@
 ---
-// src/pages/about.astro
+// src/pages/404.astro
 import Layout from '../layouts/Layout.astro';
 
-// This is where you can define your bio text and skills
-const bio = "This page seems to have wandered off. Why don't you head back to the homepage and start fresh?";
-
-const skills = [
-  'Branding & Identity',
-  'Poster Design',
-  'Logo Design',
-  'UI/UX',
-  'Figma',
-  'Adobe Illustrator',
-  'Adobe Photoshop',
-];
+const errorMessage = "This page seems to have wandered off. Why don't you head back to the homepage and start fresh?";
 ---
 <Layout title="404 | usrarama">
   <div class="container mx-auto px-4 py-16">
     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">404</h1>
 
     <div class="prose max-w-none text-gray-800 mt-8">
-      <p>{bio}</p>
+      <p>{errorMessage}</p>
     </div>
 
   </div>
